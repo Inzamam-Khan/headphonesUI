@@ -29,7 +29,7 @@ export const Header=()=>{
 
 
                 {/* hamburger menu for max-md */}
-                <div className='md:hidden' onClick={()=>setIsOpen(!isOpen)}>
+                <div className='md:hidden cursor-pointer' onClick={()=>setIsOpen(!isOpen)}>
                     {isOpen? (<RxCross2 />):(
                         <RxHamburgerMenu />
                     )}
@@ -42,9 +42,10 @@ export const Header=()=>{
             </div>
 
 
-            <div className={`fixed transform ease-in-out duration-500 transition-all ${isOpen? `translate-x-[20rem] ` :`translate-x-[50rem]`}
-                 border-blue-500 w-[35vW] min-h-[10rem] h-[100vh] md:hidden `} >
-                <MenuItems/>
+            <div className={`fixed transform ease-in-out duration-500 transition-all ${isOpen? `translate-x-[0rem] ` 
+            :`translate-x-[50rem]`}
+                 border-blue-500 w-full min-h-[10rem] h-[100vh] md:hidden `} >
+                <MenuItems isOpen={isOpen} setIsOpen={setIsOpen}/>
                  </div>
 
         </nav>
